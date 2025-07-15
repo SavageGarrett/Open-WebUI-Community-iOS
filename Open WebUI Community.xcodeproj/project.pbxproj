@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		45F2B8CD2E25FC6500DB8FCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F2B8B42E25FC6200DB8FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45F2B8BB2E25FC6200DB8FCC;
+			remoteInfo = "Open WebUI Community";
+		};
+		45F2B8D72E25FC6500DB8FCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F2B8B42E25FC6200DB8FCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45F2B8BB2E25FC6200DB8FCC;
+			remoteInfo = "Open WebUI Community";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		45F2B8BC2E25FC6200DB8FCC /* Open WebUI Community.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Open WebUI Community.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45F2B8CC2E25FC6500DB8FCC /* Open WebUI CommunityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Open WebUI CommunityTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45F2B8D62E25FC6500DB8FCC /* Open WebUI CommunityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Open WebUI CommunityUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		45F2B8BE2E25FC6200DB8FCC /* Open WebUI Community */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Open WebUI Community";
+			sourceTree = "<group>";
+		};
+		45F2B8CF2E25FC6500DB8FCC /* Open WebUI CommunityTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Open WebUI CommunityTests";
+			sourceTree = "<group>";
+		};
+		45F2B8D92E25FC6500DB8FCC /* Open WebUI CommunityUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Open WebUI CommunityUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45F2B8B92E25FC6200DB8FCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45F2B8C92E25FC6500DB8FCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45F2B8D32E25FC6500DB8FCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45F2B8B32E25FC6200DB8FCC = {
+			isa = PBXGroup;
+			children = (
+				45F2B8BE2E25FC6200DB8FCC /* Open WebUI Community */,
+				45F2B8CF2E25FC6500DB8FCC /* Open WebUI CommunityTests */,
+				45F2B8D92E25FC6500DB8FCC /* Open WebUI CommunityUITests */,
+				45F2B8BD2E25FC6200DB8FCC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45F2B8BD2E25FC6200DB8FCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45F2B8BC2E25FC6200DB8FCC /* Open WebUI Community.app */,
+				45F2B8CC2E25FC6500DB8FCC /* Open WebUI CommunityTests.xctest */,
+				45F2B8D62E25FC6500DB8FCC /* Open WebUI CommunityUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45F2B8BB2E25FC6200DB8FCC /* Open WebUI Community */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45F2B8E02E25FC6500DB8FCC /* Build configuration list for PBXNativeTarget "Open WebUI Community" */;
+			buildPhases = (
+				45F2B8B82E25FC6200DB8FCC /* Sources */,
+				45F2B8B92E25FC6200DB8FCC /* Frameworks */,
+				45F2B8BA2E25FC6200DB8FCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				45F2B8BE2E25FC6200DB8FCC /* Open WebUI Community */,
+			);
+			name = "Open WebUI Community";
+			packageProductDependencies = (
+			);
+			productName = "Open WebUI Community";
+			productReference = 45F2B8BC2E25FC6200DB8FCC /* Open WebUI Community.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45F2B8CB2E25FC6500DB8FCC /* Open WebUI CommunityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45F2B8E32E25FC6500DB8FCC /* Build configuration list for PBXNativeTarget "Open WebUI CommunityTests" */;
+			buildPhases = (
+				45F2B8C82E25FC6500DB8FCC /* Sources */,
+				45F2B8C92E25FC6500DB8FCC /* Frameworks */,
+				45F2B8CA2E25FC6500DB8FCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45F2B8CE2E25FC6500DB8FCC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				45F2B8CF2E25FC6500DB8FCC /* Open WebUI CommunityTests */,
+			);
+			name = "Open WebUI CommunityTests";
+			packageProductDependencies = (
+			);
+			productName = "Open WebUI CommunityTests";
+			productReference = 45F2B8CC2E25FC6500DB8FCC /* Open WebUI CommunityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		45F2B8D52E25FC6500DB8FCC /* Open WebUI CommunityUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45F2B8E62E25FC6500DB8FCC /* Build configuration list for PBXNativeTarget "Open WebUI CommunityUITests" */;
+			buildPhases = (
+				45F2B8D22E25FC6500DB8FCC /* Sources */,
+				45F2B8D32E25FC6500DB8FCC /* Frameworks */,
+				45F2B8D42E25FC6500DB8FCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45F2B8D82E25FC6500DB8FCC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				45F2B8D92E25FC6500DB8FCC /* Open WebUI CommunityUITests */,
+			);
+			name = "Open WebUI CommunityUITests";
+			packageProductDependencies = (
+			);
+			productName = "Open WebUI CommunityUITests";
+			productReference = 45F2B8D62E25FC6500DB8FCC /* Open WebUI CommunityUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45F2B8B42E25FC6200DB8FCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					45F2B8BB2E25FC6200DB8FCC = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					45F2B8CB2E25FC6500DB8FCC = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 45F2B8BB2E25FC6200DB8FCC;
+					};
+					45F2B8D52E25FC6500DB8FCC = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 45F2B8BB2E25FC6200DB8FCC;
+					};
+				};
+			};
+			buildConfigurationList = 45F2B8B72E25FC6200DB8FCC /* Build configuration list for PBXProject "Open WebUI Community" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45F2B8B32E25FC6200DB8FCC;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 45F2B8BD2E25FC6200DB8FCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45F2B8BB2E25FC6200DB8FCC /* Open WebUI Community */,
+				45F2B8CB2E25FC6500DB8FCC /* Open WebUI CommunityTests */,
+				45F2B8D52E25FC6500DB8FCC /* Open WebUI CommunityUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45F2B8BA2E25FC6200DB8FCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45F2B8CA2E25FC6500DB8FCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45F2B8D42E25FC6500DB8FCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45F2B8B82E25FC6200DB8FCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45F2B8C82E25FC6500DB8FCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45F2B8D22E25FC6500DB8FCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45F2B8CE2E25FC6500DB8FCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45F2B8BB2E25FC6200DB8FCC /* Open WebUI Community */;
+			targetProxy = 45F2B8CD2E25FC6500DB8FCC /* PBXContainerItemProxy */;
+		};
+		45F2B8D82E25FC6500DB8FCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45F2B8BB2E25FC6200DB8FCC /* Open WebUI Community */;
+			targetProxy = 45F2B8D72E25FC6500DB8FCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		45F2B8DE2E25FC6500DB8FCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		45F2B8DF2E25FC6500DB8FCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45F2B8E12E25FC6500DB8FCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Open WebUI Community/Preview Content\"";
+				DEVELOPMENT_TEAM = M388C3QUBU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "SavageGarrett.Open-WebUI-Community";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		45F2B8E22E25FC6500DB8FCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Open WebUI Community/Preview Content\"";
+				DEVELOPMENT_TEAM = M388C3QUBU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "SavageGarrett.Open-WebUI-Community";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		45F2B8E42E25FC6500DB8FCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M388C3QUBU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "SavageGarrett.Open-WebUI-CommunityTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Open WebUI Community.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Open WebUI Community";
+			};
+			name = Debug;
+		};
+		45F2B8E52E25FC6500DB8FCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M388C3QUBU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "SavageGarrett.Open-WebUI-CommunityTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Open WebUI Community.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Open WebUI Community";
+			};
+			name = Release;
+		};
+		45F2B8E72E25FC6500DB8FCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M388C3QUBU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "SavageGarrett.Open-WebUI-CommunityUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Open WebUI Community";
+			};
+			name = Debug;
+		};
+		45F2B8E82E25FC6500DB8FCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M388C3QUBU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "SavageGarrett.Open-WebUI-CommunityUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Open WebUI Community";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45F2B8B72E25FC6200DB8FCC /* Build configuration list for PBXProject "Open WebUI Community" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45F2B8DE2E25FC6500DB8FCC /* Debug */,
+				45F2B8DF2E25FC6500DB8FCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45F2B8E02E25FC6500DB8FCC /* Build configuration list for PBXNativeTarget "Open WebUI Community" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45F2B8E12E25FC6500DB8FCC /* Debug */,
+				45F2B8E22E25FC6500DB8FCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45F2B8E32E25FC6500DB8FCC /* Build configuration list for PBXNativeTarget "Open WebUI CommunityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45F2B8E42E25FC6500DB8FCC /* Debug */,
+				45F2B8E52E25FC6500DB8FCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45F2B8E62E25FC6500DB8FCC /* Build configuration list for PBXNativeTarget "Open WebUI CommunityUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45F2B8E72E25FC6500DB8FCC /* Debug */,
+				45F2B8E82E25FC6500DB8FCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45F2B8B42E25FC6200DB8FCC /* Project object */;
+}
