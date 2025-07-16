@@ -16,6 +16,8 @@ class LoginViewModel: ObservableObject {
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
     
+    let serverConfig = ServerConfig.shared
+    
     var isValidForm: Bool {
         !email.isEmpty && !password.isEmpty && isValidEmail(email)
     }
@@ -33,17 +35,22 @@ class LoginViewModel: ObservableObject {
             return
         }
         
+        guard !serverConfig.serverURL.isEmpty else {
+            alertMessage = "No server URL found. Please go back and connect to a server first."
+            showAlert = true
+            return
+        }
+        
         isLoading = true
         showAlert = false
         
-        // Simulate login API call
         Task {
             do {
+                // TODO: Implement actual login API call using serverConfig.serverURL
+                // For now, we'll simulate a successful login
                 try await Task.sleep(nanoseconds: 2_000_000_000) // 2 second delay
                 
-                // TODO: Implement actual login API call here
-                // For now, we'll simulate a successful login
-                print("✅ Login successful for \(email)")
+                print("✅ Login successful for \(email) on server: \(serverConfig.serverURL)")
                 
                 // Navigate to main app or show success
                 // This will be handled by the parent view

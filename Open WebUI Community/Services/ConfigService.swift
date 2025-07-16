@@ -7,6 +7,29 @@
 
 import Foundation
 
+// Server configuration storage
+class ServerConfig: ObservableObject {
+    static let shared = ServerConfig()
+    
+    @Published var serverURL: String = ""
+    @Published var serverInfo: WebUIStatusResponse?
+    
+    private init() {}
+    
+    func setServerURL(_ url: String) {
+        serverURL = url
+    }
+    
+    func setServerInfo(_ info: WebUIStatusResponse) {
+        serverInfo = info
+    }
+    
+    func clear() {
+        serverURL = ""
+        serverInfo = nil
+    }
+}
+
 protocol ConfigServiceProtocol {
     func fetchConfig(serverUrl: String) async throws -> WebUIStatusResponse
 }

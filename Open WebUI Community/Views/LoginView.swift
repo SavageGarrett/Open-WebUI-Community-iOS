@@ -25,6 +25,25 @@ struct LoginView: View {
                             .font(.title)
                             .fontWeight(.semibold)
                         
+                        if let serverInfo = viewModel.serverConfig.serverInfo {
+                            VStack(spacing: 4) {
+                                Text("Connected to: \(serverInfo.name)")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                                
+                                Text("Version: \(serverInfo.version)")
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                                
+                                if let serverURL = URL(string: viewModel.serverConfig.serverURL),
+                                   let host = serverURL.host {
+                                    Text("Server: \(host)")
+                                        .font(.caption2)
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                        }
+                        
                         VStack(spacing: 15) {
                             TextField("Email", text: $viewModel.email)
                                 .textInputAutocapitalization(.never)

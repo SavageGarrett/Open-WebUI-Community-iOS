@@ -43,6 +43,11 @@ class ConnectViewModel: ObservableObject {
                 let response = try await configService.fetchConfig(serverUrl: serverAddress)
                 serverInfo = response
                 isConnected = true
+                
+                // Save server configuration for use in login
+                ServerConfig.shared.setServerURL(serverAddress)
+                ServerConfig.shared.setServerInfo(response)
+                
                 shouldNavigateToLogin = true
                 print("✅ Connected to \(response.name), version \(response.version)")
             } catch {
@@ -60,5 +65,8 @@ class ConnectViewModel: ObservableObject {
         serverInfo = nil
         serverAddress = ""
         shouldNavigateToLogin = false
+        
+        // Clear stored server configuration
+        ServerConfig.shared.clear()
     }
 } 
