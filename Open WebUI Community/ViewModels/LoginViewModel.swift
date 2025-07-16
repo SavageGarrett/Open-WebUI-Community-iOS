@@ -17,6 +17,8 @@ class LoginViewModel: ObservableObject {
     @Published var alertMessage: String = ""
     
     let serverConfig = ServerConfig.shared
+    let userSession = UserSession.shared
+    private let loginService = LoginService.shared
     
     var isValidForm: Bool {
         !email.isEmpty && !password.isEmpty && isValidEmail(email)
@@ -46,17 +48,22 @@ class LoginViewModel: ObservableObject {
         
         Task {
             do {
-                // TODO: Implement actual login API call using serverConfig.serverURL
-                // For now, we'll simulate a successful login
-                try await Task.sleep(nanoseconds: 2_000_000_000) // 2 second delay
+                let response = try await loginService.login(
+                    email: email,
+                    password: password,
+                    serverUrl: serverConfig.serverURL
+                )
                 
-                print("✅ Login successful for \(email) on server: \(serverConfig.serverURL)")
+                userSession.setLoginResponse(response)
+                print("✅ Login successful for \(response.email) on server: \(serverConfig.serverURL)")
+                print("User: \(response.name) (\(response.role))")
+                print("Token: \(response.token)")
                 
                 // Navigate to main app or show success
                 // This will be handled by the parent view
                 
             } catch {
-                alertMessage = "Login failed. Please try again."
+                alertMessage = "Login failed. Please check your credentials and try again."
                 showAlert = true
                 print("❌ Login failed:", error)
             }

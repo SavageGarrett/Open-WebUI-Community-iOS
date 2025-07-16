@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ConnectView: View {
     @StateObject private var viewModel = ConnectViewModel()
+    @StateObject private var userSession = UserSession.shared
     
     var body: some View {
         NavigationStack {
@@ -54,6 +55,9 @@ struct ConnectView: View {
             }
             .navigationDestination(isPresented: $viewModel.shouldNavigateToLogin) {
                 LoginView()
+            }
+            .navigationDestination(isPresented: $userSession.isLoggedIn) {
+                ChatView()
             }
         }
         .preferredColorScheme(.dark)
