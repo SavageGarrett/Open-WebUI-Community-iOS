@@ -11,7 +11,7 @@ struct ConnectView: View {
     @StateObject private var viewModel = ConnectViewModel()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 VStack(spacing: 20) {
                     Image("Logo")
@@ -31,42 +31,29 @@ struct ConnectView: View {
                         .cornerRadius(8)
                         .disabled(viewModel.isLoading)
                     
-                    if viewModel.isConnected {
-                        VStack(spacing: 10) {
-                            Text("✅ Connected!")
-                                .font(.headline)
-                                .foregroundColor(.green)
-                            
-                            if let serverInfo = viewModel.serverInfo {
-                                VStack(alignment: .leading, spacing: 5) {
-                                    Text("Server: \(serverInfo.name)")
-                                    Text("Version: \(serverInfo.version)")
-                                }
-                                .font(.caption)
-                                .foregroundColor(.secondary)
+                    Button(action: viewModel.connect) {
+                        HStack {
+                            if viewModel.isLoading {
+                                ProgressView()
+                                    .scaleEffect(0.8)
+                                    .foregroundColor(.white)
                             }
-                            
-                            Button("Disconnect") {
-                                viewModel.resetConnection()
-                            }
-                            .buttonStyle(.bordered)
+                            Text(viewModel.isLoading ? "Connecting..." : "Connect")
+                                .fontWeight(.semibold)
                         }
-                    } else {
-                        Button(action: viewModel.connect) {
-                            HStack {
-                                if viewModel.isLoading {
-                                    ProgressView()
-                                        .scaleEffect(0.8)
-                                }
-                                Text(viewModel.isLoading ? "Connecting..." : "Connect")
-                            }
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .disabled(viewModel.isLoading || !viewModel.isValidURL)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                     }
+                    .disabled(viewModel.isLoading || !viewModel.isValidURL)
                 }
                 .frame(maxHeight: .infinity, alignment: .center)
                 .padding()
+            }
+            .navigationDestination(isPresented: $viewModel.shouldNavigateToLogin) {
+                LoginView()
             }
         }
         .preferredColorScheme(.dark)

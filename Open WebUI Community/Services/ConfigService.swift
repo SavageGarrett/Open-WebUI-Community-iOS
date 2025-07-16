@@ -31,6 +31,8 @@ class ConfigService: ConfigServiceProtocol {
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 throw NetworkError.invalidResponse
             }
+
+            try await Task.sleep(nanoseconds: 2_000_000_000)
             
             return try JSONDecoder().decode(WebUIStatusResponse.self, from: data)
         } catch let error as NetworkError {

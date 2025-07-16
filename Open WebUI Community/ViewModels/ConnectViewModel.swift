@@ -16,6 +16,7 @@ class ConnectViewModel: ObservableObject {
     @Published var alertMessage: String = ""
     @Published var isConnected: Bool = false
     @Published var serverInfo: WebUIStatusResponse?
+    @Published var shouldNavigateToLogin: Bool = false
     
     private let configService: ConfigServiceProtocol
     
@@ -42,6 +43,7 @@ class ConnectViewModel: ObservableObject {
                 let response = try await configService.fetchConfig(serverUrl: serverAddress)
                 serverInfo = response
                 isConnected = true
+                shouldNavigateToLogin = true
                 print("✅ Connected to \(response.name), version \(response.version)")
             } catch {
                 alertMessage = error.localizedDescription
@@ -57,5 +59,6 @@ class ConnectViewModel: ObservableObject {
         isConnected = false
         serverInfo = nil
         serverAddress = ""
+        shouldNavigateToLogin = false
     }
 } 
