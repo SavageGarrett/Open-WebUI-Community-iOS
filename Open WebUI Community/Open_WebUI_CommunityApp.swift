@@ -1,4 +1,4 @@
-//
+ //
 //  Open_WebUI_CommunityApp.swift
 //  Open WebUI Community
 //
@@ -11,7 +11,7 @@ import SwiftUI
 struct Open_WebUI_CommunityApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ConnectView()
         }
     }
 }
