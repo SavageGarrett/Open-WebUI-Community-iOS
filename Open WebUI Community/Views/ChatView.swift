@@ -8,14 +8,7 @@
 import SwiftUI
 
 struct ChatView: View {
-    @StateObject private var userSession = UserSession.shared
-    @State private var messageText = ""
-    @State private var isDrawerOpen = false
-    @State private var chatHistory: [ChatItem] = [
-        ChatItem(id: UUID(), title: "Previous Chat 1", timestamp: Date()),
-        ChatItem(id: UUID(), title: "Previous Chat 2", timestamp: Date().addingTimeInterval(-3600)),
-        ChatItem(id: UUID(), title: "Previous Chat 3", timestamp: Date().addingTimeInterval(-7200))
-    ]
+    @StateObject private var viewModel = ChatViewModel()
     
     var body: some View {
         NavigationView {
@@ -25,9 +18,7 @@ struct ChatView: View {
                     // Top Bar with Menu Icon
                     HStack {
                         Button(action: {
-                            withAnimation(.easeInOut(duration: 0.3)) {
-                                isDrawerOpen.toggle()
-                            }
+                            viewModel.toggleDrawer()
                         }) {
                             Image(systemName: "line.3.horizontal")
                                 .font(.title2)
@@ -56,7 +47,7 @@ struct ChatView: View {
                                     .clipShape(Circle())
                                 
                                 // Text
-                                Text("Hello, \(userSession.userName ?? "User")")
+                                Text("Hello, \(viewModel.userName)")
                                     .font(.title)
                                     .fontWeight(.medium)
                                     .foregroundColor(.primary)
@@ -64,7 +55,7 @@ struct ChatView: View {
                         }
                         
                         // Chat Input
-                        ChatInputView(messageText: $messageText, onSend: sendMessage)
+                        ChatInputView(messageText: $viewModel.messageText, onSend: viewModel.sendMessage)
                     }
                     .padding(.horizontal, 20)
                     
@@ -74,10 +65,10 @@ struct ChatView: View {
                 
                 // Side Drawer
                 SideDrawerView(
-                    isOpen: $isDrawerOpen,
-                    chatHistory: $chatHistory,
-                    onNewChat: startNewChat,
-                    onSelectChat: selectChat
+                    isOpen: $viewModel.isDrawerOpen,
+                    chatHistory: $viewModel.chatHistory,
+                    onNewChat: viewModel.startNewChat,
+                    onSelectChat: viewModel.selectChat
                 )
             }
         }
@@ -85,35 +76,9 @@ struct ChatView: View {
         .gesture(
             DragGesture()
                 .onEnded { value in
-                    if value.translation.width > 100 && !isDrawerOpen {
-                        withAnimation(.easeInOut(duration: 0.3)) {
-                            isDrawerOpen = true
-                        }
-                    } else if value.translation.width < -100 && isDrawerOpen {
-                        withAnimation(.easeInOut(duration: 0.3)) {
-                            isDrawerOpen = false
-                        }
-                    }
+                    viewModel.handleDrawerGesture(value.translation)
                 }
         )
-    }
-    
-    private func sendMessage() {
-        guard !messageText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
-        messageText = ""
-    }
-    
-    private func startNewChat() {
-        // Add new chat to history
-        let newChat = ChatItem(id: UUID(), title: "New Chat", timestamp: Date())
-        chatHistory.insert(newChat, at: 0)
-        isDrawerOpen = false
-    }
-    
-    private func selectChat(_ chat: ChatItem) {
-        // Handle chat selection
-        print("Selected chat: \(chat.title)")
-        isDrawerOpen = false
     }
 }
 
@@ -234,12 +199,7 @@ struct ChatHistoryItemView: View {
     }
 }
 
-// MARK: - Chat Item Model
-struct ChatItem: Identifiable {
-    let id: UUID
-    let title: String
-    let timestamp: Date
-}
+
 
 // MARK: - Input Area Component
 struct ChatInputView: View {

@@ -29,22 +29,9 @@
 		45F2B8D62E25FC6500DB8FCC /* Open WebUI CommunityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Open WebUI CommunityUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		453A92BB2E2768240086154F /* Exceptions for "Open WebUI Community" folder in "Open WebUI Community" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Open-WebUI-Community-Info.plist",
-			);
-			target = 45F2B8BB2E25FC6200DB8FCC /* Open WebUI Community */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		45F2B8BE2E25FC6200DB8FCC /* Open WebUI Community */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				453A92BB2E2768240086154F /* Exceptions for "Open WebUI Community" folder in "Open WebUI Community" target */,
-			);
 			path = "Open WebUI Community";
 			sourceTree = "<group>";
 		};
