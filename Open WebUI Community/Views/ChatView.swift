@@ -10,50 +10,235 @@ import SwiftUI
 struct ChatView: View {
     @StateObject private var userSession = UserSession.shared
     @State private var messageText = ""
+    @State private var isDrawerOpen = false
+    @State private var chatHistory: [ChatItem] = [
+        ChatItem(id: UUID(), title: "Previous Chat 1", timestamp: Date()),
+        ChatItem(id: UUID(), title: "Previous Chat 2", timestamp: Date().addingTimeInterval(-3600)),
+        ChatItem(id: UUID(), title: "Previous Chat 3", timestamp: Date().addingTimeInterval(-7200))
+    ]
     
     var body: some View {
         NavigationView {
-            VStack {
-                Spacer()
-                
-                // Centered Content
-                VStack(spacing: 40) {
-                    // Greeting
-                    VStack(spacing: 16) {
-                        // Logo and Text centered together
-                        HStack(spacing: 16) {
-                            // Logo
-                            Image("Logo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 60, height: 60)
-                                .background(Color.black)
-                                .clipShape(Circle())
-                            
-                            // Text
-                            Text("Hello, \(userSession.userName ?? "User")")
-                                .font(.title)
-                                .fontWeight(.medium)
+            ZStack {
+                // Main Content
+                VStack {
+                    // Top Bar with Menu Icon
+                    HStack {
+                        Button(action: {
+                            withAnimation(.easeInOut(duration: 0.3)) {
+                                isDrawerOpen.toggle()
+                            }
+                        }) {
+                            Image(systemName: "line.3.horizontal")
+                                .font(.title2)
                                 .foregroundColor(.primary)
                         }
+                        
+                        Spacer()
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 10)
                     
-                    // Chat Input
-                    ChatInputView(messageText: $messageText, onSend: sendMessage)
+                    Spacer()
+                    
+                    // Centered Content
+                    VStack(spacing: 40) {
+                        // Greeting
+                        VStack(spacing: 16) {
+                            // Logo and Text centered together
+                            HStack(spacing: 16) {
+                                // Logo
+                                Image("Logo")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 60, height: 60)
+                                    .background(Color.black)
+                                    .clipShape(Circle())
+                                
+                                // Text
+                                Text("Hello, \(userSession.userName ?? "User")")
+                                    .font(.title)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.primary)
+                            }
+                        }
+                        
+                        // Chat Input
+                        ChatInputView(messageText: $messageText, onSend: sendMessage)
+                    }
+                    .padding(.horizontal, 20)
+                    
+                    Spacer()
                 }
-                .padding(.horizontal, 20)
+                .background(Color(.systemBackground))
                 
-                Spacer()
+                // Side Drawer
+                SideDrawerView(
+                    isOpen: $isDrawerOpen,
+                    chatHistory: $chatHistory,
+                    onNewChat: startNewChat,
+                    onSelectChat: selectChat
+                )
             }
-            .background(Color(.systemBackground))
         }
         .preferredColorScheme(.dark)
+        .gesture(
+            DragGesture()
+                .onEnded { value in
+                    if value.translation.width > 100 && !isDrawerOpen {
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                            isDrawerOpen = true
+                        }
+                    } else if value.translation.width < -100 && isDrawerOpen {
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                            isDrawerOpen = false
+                        }
+                    }
+                }
+        )
     }
     
     private func sendMessage() {
         guard !messageText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
         messageText = ""
     }
+    
+    private func startNewChat() {
+        // Add new chat to history
+        let newChat = ChatItem(id: UUID(), title: "New Chat", timestamp: Date())
+        chatHistory.insert(newChat, at: 0)
+        isDrawerOpen = false
+    }
+    
+    private func selectChat(_ chat: ChatItem) {
+        // Handle chat selection
+        print("Selected chat: \(chat.title)")
+        isDrawerOpen = false
+    }
+}
+
+// MARK: - Side Drawer Component
+struct SideDrawerView: View {
+    @Binding var isOpen: Bool
+    @Binding var chatHistory: [ChatItem]
+    let onNewChat: () -> Void
+    let onSelectChat: (ChatItem) -> Void
+    
+    var body: some View {
+        GeometryReader { geometry in
+            HStack(spacing: 0) {
+                // Drawer Content
+                VStack(spacing: 0) {
+                    // Header
+                    VStack(spacing: 16) {
+                        HStack {
+                            Text("Chat History")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.primary)
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                withAnimation(.easeInOut(duration: 0.3)) {
+                                    isOpen = false
+                                }
+                            }) {
+                                Image(systemName: "xmark")
+                                    .font(.title2)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        
+                        // New Chat Button
+                        Button(action: onNewChat) {
+                            HStack {
+                                Image(systemName: "plus")
+                                    .font(.title3)
+                                Text("New Chat")
+                                    .font(.headline)
+                                    .fontWeight(.medium)
+                            }
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 12)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 20)
+                    
+                    // Chat History List
+                    ScrollView {
+                        LazyVStack(spacing: 8) {
+                            ForEach(chatHistory) { chat in
+                                ChatHistoryItemView(chat: chat) {
+                                    onSelectChat(chat)
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.top, 20)
+                    }
+                }
+                .frame(width: geometry.size.width * 0.8)
+                .background(Color(.secondarySystemBackground))
+                .offset(x: isOpen ? 0 : -geometry.size.width * 0.8)
+                
+                // Overlay
+                if isOpen {
+                    Color.black.opacity(0.3)
+                        .onTapGesture {
+                            withAnimation(.easeInOut(duration: 0.3)) {
+                                isOpen = false
+                            }
+                        }
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Chat History Item Component
+struct ChatHistoryItemView: View {
+    let chat: ChatItem
+    let onTap: () -> Void
+    
+    var body: some View {
+        Button(action: onTap) {
+            HStack(spacing: 12) {
+                Image(systemName: "message")
+                    .foregroundColor(.secondary)
+                    .font(.system(size: 16))
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(chat.title)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.primary)
+                    
+                    Text(chat.timestamp, style: .relative)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                
+                Spacer()
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 12)
+            .background(Color(.tertiarySystemBackground))
+            .cornerRadius(10)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+}
+
+// MARK: - Chat Item Model
+struct ChatItem: Identifiable {
+    let id: UUID
+    let title: String
+    let timestamp: Date
 }
 
 // MARK: - Input Area Component
